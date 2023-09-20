@@ -50,7 +50,7 @@ const comments = (state = 0, action) => {
     return state
 } 
 
-/** TODO: Create store */
+//Redux store
 const storeInstance = createStore(
     combineReducers(
         {
@@ -60,7 +60,7 @@ const storeInstance = createStore(
             comments
         }
     ),
-    // Setup our logger
+    // Setup logger
     applyMiddleware(logger)
 );
 
