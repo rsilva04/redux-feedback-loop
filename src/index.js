@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
+//REDUCERS
 const feeling = (state = 0, action) => {
     //saving information sent about feelings
     if (action.type === 'SET_FEELING') {
@@ -49,11 +50,27 @@ const comments = (state = 0, action) => {
     return state
 } 
 
+/** TODO: Create store */
+const storeInstance = createStore(
+    combineReducers(
+        {
+            feeling,
+            understanding,
+            support,
+            comments
+        }
+    ),
+    // Setup our logger
+    applyMiddleware(logger)
+);
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
+        <Provider store={storeInstance}>
         <App />
+        </Provider>
     </React.StrictMode>
 );
