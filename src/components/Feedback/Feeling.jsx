@@ -5,7 +5,7 @@ function Feeling() {
 
     const history = useHistory();
     const feeling = useSelector(store => store.feeling);
-    const dispatch = useDispatch
+    const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
         const action = { type: 'SET_FEELING', payload: event.target.value };
@@ -13,7 +13,7 @@ function Feeling() {
     }
 
     const nextStep = (event) => {
-        event.preventdefault();
+        event.preventDefault();
         if (feeling > 0) {
             return history.push('/understanding')
         }
