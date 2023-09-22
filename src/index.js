@@ -6,7 +6,7 @@ import App from './components/App/App';
 // Redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 
 //REDUCERS
@@ -61,7 +61,7 @@ const storeInstance = createStore(
         }
     ),
     // Setup logger
-    applyMiddleware(logger)
+    // applyMiddleware(logger)
 );
 
 
