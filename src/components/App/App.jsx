@@ -12,10 +12,27 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
-      <Feeling />
-      <Understanding />
-      <Support />
+
+      <Router>
+        <Route exact path="/" />
+        <Header />
+      </Router>
+
+      <Router>
+        <Route exact path="/feeling" />
+        <Feeling />
+      </Router>
+
+      <Router>
+        <Route exact path="/understanding" />
+        <Understanding />
+      </Router>
+
+
+      <Router>
+        <Route exact path="/support" />
+        <Support />
+      </Router>
 
     </div>
   );
