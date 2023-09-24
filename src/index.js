@@ -32,7 +32,7 @@ const understanding = (state = 0, action) => {
 
 const support = (state = 0, action) => {
     //saving information sent about support
-    if (action.type === 'SET_UNDERSTANDING') {
+    if (action.type === 'SET_SUPPORT') {
         return action.payload;
     } else if (action.type === 'CLEAR') {
         return 0;
