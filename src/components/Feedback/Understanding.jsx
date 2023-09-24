@@ -29,6 +29,7 @@ function Understanding() {
     return (
         <div>
             <h3>How well are you understaning the context?</h3>
+            <h4>Understanding?</h4>
             <form className='' onSubmit={nextStep}>
                 <input type="number" name='' value={understanding} onChange={handleSubmit} />
                 <button onClick = {nextStep}>Next</button>
