@@ -7,6 +7,7 @@ import Feeling from '../Feedback/Feeling';
 import Header from '../Header/Header';
 import Understanding from '../Feedback/Understanding';
 import Support from '../Feedback/Support';
+import Comments from '../Feedback/Comments';
 
 function App() {
 
@@ -32,6 +33,11 @@ function App() {
       <Router>
         <Route exact path="/support" />
         <Support />
+      </Router>
+
+      <Router>
+        <Route exact path="/comments" />
+        <Comments />
       </Router>
 
     </div>
