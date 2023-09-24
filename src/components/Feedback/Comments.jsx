@@ -15,7 +15,7 @@ function Comments() {
     const nextStep = (event) => {
         event.preventDefault();
         if (comments > 0) {
-            return history.push('/support')
+            return history.push('/review')
         }
     }
     const previousPage = () => {
