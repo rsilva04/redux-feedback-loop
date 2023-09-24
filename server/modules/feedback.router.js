@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const postFeedback = req.body;
-    console.log(posteFeedback);
+    console.log(postFeedback);
     const queryString =   `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                         VALUES ($1, $2, $3, $4)`;
     const queryValues = [
