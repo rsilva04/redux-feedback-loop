@@ -32,7 +32,7 @@ function Feeling() {
             <h4>Feeling?</h4>
             <form className='' onSubmit={nextStep}>
                 <input type="number" name='' value={feeling} onChange={handleSubmit} />
-
+                <button onClick = {nextStep}>Next</button>
             </form>
             <button onSubmit={previousPage}>Go Back</button>
         </div>
