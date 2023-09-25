@@ -12,9 +12,22 @@ function Review () {
     const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
 
-    // const handleSubmit = () =>{
-        
-    // }
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        const review = {
+            feeling: feeling,
+            understanding: understanding,
+            support: support,
+            comments: comments
+        }
+        axios.post('/review', review)
+        .then (response => {
+            history.push('/review');
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
 
 
 
@@ -22,11 +35,11 @@ function Review () {
 
 <div>
             <h3>Review Your Feedback</h3>
-            <h4>Feelings:{}</h4>
-            <h4>Understanding:{}</h4>
-            <h4>Support:{}</h4>
-            <h4>Comments:{}</h4>
-            {/* <button onClick={handleSubmit}>Submit</button> */}
+            <h4>Feeling:{feeling}</h4>
+            <h4>Understanding:{understanding}</h4>
+            <h4>Support:{support}</h4>
+            <h4>Comments:{comments}</h4>
+            <button onClick={handleSubmit}>Submit</button>
 
 
 </div>
