@@ -12,10 +12,28 @@ function Review () {
     const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
 
-    
+    // const handleSubmit = () =>{
+        
+    // }
 
 
+
+    return (
+
+<div>
+            <h3>Review Your Feedback</h3>
+            <h4>Feelings:{}</h4>
+            <h4>Understanding:{}</h4>
+            <h4>Support:{}</h4>
+            <h4>Comments:{}</h4>
+            {/* <button onClick={handleSubmit}>Submit</button> */}
+
+
+</div>
+    );
 
 
 
 }
+
+export default Review;

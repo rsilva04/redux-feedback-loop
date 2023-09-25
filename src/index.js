@@ -50,6 +50,15 @@ const comments = (state = '', action) => {
     return state
 } 
 
+const review = (state = '', action) => {
+    // TODO - set book list with data from server
+    if(action.type === 'SET_REVIEW') {
+      return action.payload
+    }
+    return state;
+  }
+  
+
 //Redux store
 const storeInstance = createStore(
     combineReducers(
@@ -57,7 +66,8 @@ const storeInstance = createStore(
             feeling,
             understanding,
             support,
-            comments
+            comments,
+            review
         }
     ),
     // Setup logger
