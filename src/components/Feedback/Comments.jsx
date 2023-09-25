@@ -13,8 +13,8 @@ function Comments() {
     }
 
     const nextStep = (event) => {
-        event.preventDefault();
-        if (comments > 0) {
+        console.log('working');
+        if (comments) {
             return history.push('/review')
         }
     }

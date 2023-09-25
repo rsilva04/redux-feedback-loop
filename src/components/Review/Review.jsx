@@ -4,7 +4,6 @@ import axios from 'axios';
 
 function Review () {
 
-    const axios = axios;
     const history = useHistory();
 
     const feeling = useSelector(store => store.feeling);
@@ -13,7 +12,7 @@ function Review () {
     const comments = useSelector(store => store.comments);
 
     const handleSubmit = () => {
-        axios.post("/feedback", {
+        axios.post("/feedback/feedback", {
             feeling: feeling,
             understanding: understanding,
             support: support,
