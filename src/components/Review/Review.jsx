@@ -12,22 +12,21 @@ function Review () {
     const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
 
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        const review = {
+    const handleSubmit = () => {
+        axios.post("/feedback", {
             feeling: feeling,
             understanding: understanding,
             support: support,
-            comments: comments
-        }
-        axios.post('/review', review)
-        .then (response => {
-            history.push('/review');
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    }
+            comments: comments,
+          })
+          .then((response) => {
+            console.log(response);
+            // history.push("/thankYou");
+          })
+          .catch((error) => {
+            console.log(`Error posting feedback ${error}`);
+          });
+      };
 
 
 

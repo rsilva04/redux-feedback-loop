@@ -15,24 +15,22 @@ router.get('/', (req, res) => {
     });
   });
 
-router.post('/', (req, res) => {
-    const postFeedback = req.body;
-    console.log(postFeedback);
-    const queryString =   `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-                        VALUES ($1, $2, $3, $4)`;
-    const queryValues = [
-        postFeedback.feeling,
-        postFeedback.understanding,
-        postFeedback.support,
-        postFeedback.comments,
-    ];
-    pool.query(queryString, queryValues)
-    .then(() => { res.sendStatus(201); })
-    .catch((error) => {
-      console.log('Error in POST route', error);
-      res.sendStatus(500);
-    });
-});
+  router.post('/feedback',  (req, res) => {
+    let postFeedback = req.body;
+    console.log(`Adding feedback`, postFeedback);
+  
+    let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                     VALUES ($1, $2, $3, $4);`;
+    pool.query(queryText, [feeling, understanding, support, comments])
+      .then(result => {
+        res.sendStatus(201);
+      })
+      .catch(error => {
+        console.log(`Error submitting feedback`, error);
+        res.sendStatus(500);
+      });
+  });
+  
 
 router.delete('/:id', (req,res) => {
   let listId = req.params.id;
